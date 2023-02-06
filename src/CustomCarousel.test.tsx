@@ -1,10 +1,10 @@
-import React from 'react';
-import { FlatList, ListRenderItemInfo, Text } from 'react-native';
-import { act, create } from 'react-test-renderer';
-import { fireEvent, waitFor } from 'react-native-testing-library';
+import React from "react";
+import { FlatList, ListRenderItemInfo, Text } from "react-native";
+import { act, create } from "react-test-renderer";
+import { fireEvent, waitFor } from "react-native-testing-library";
 
-import CustomCarousel from './CustomCarousel';
-import PressablePagination from './PressablePagination/PressablePagination';
+import CustomCarousel from "./CustomCarousel";
+import PressablePagination from "./PressablePagination/PressablePagination";
 
 interface renderItemProp {
   text: string;
@@ -13,16 +13,16 @@ interface renderItemProp {
 
 const carouselItems = [
   {
-    text: 'text-one',
-    value: 'value-one',
+    text: "text-one",
+    value: "value-one",
   },
   {
-    text: 'text-two',
-    value: 'value-two',
+    text: "text-two",
+    value: "value-two",
   },
   {
-    text: 'text-three',
-    value: 'value-three',
+    text: "text-three",
+    value: "value-three",
   },
 ];
 
@@ -43,18 +43,18 @@ const defaultProps = {
   isEndReached: mockCurrentIndex,
 };
 
-describe('Custom Carousel', () => {
-  test('should render carousel component', () => {
+describe("Custom Carousel", () => {
+  test("should render carousel component", () => {
     const rendered = create(<CustomCarousel {...defaultProps} />);
 
     const carouselContainer = rendered.root.findByProps({
-      testID: 'content-container',
+      testID: "content-container",
     });
 
     expect(carouselContainer).toBeDefined();
   });
 
-  test('should set correct current index when onEndReached triggered', async () => {
+  test("should set correct current index when onEndReached triggered", async () => {
     const rendered = create(<CustomCarousel {...defaultProps} />);
 
     const flatList = rendered.root.findByType(FlatList);
@@ -68,7 +68,7 @@ describe('Custom Carousel', () => {
     expect(mockCurrentIndex).toBeCalledWith(true);
   });
 
-  test('onScroll triggers the animation', async () => {
+  test("onScroll triggers the animation", async () => {
     const rendered = create(<CustomCarousel {...defaultProps} />);
 
     const flatList = rendered.root.findByType(FlatList);

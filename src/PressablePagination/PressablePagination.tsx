@@ -1,8 +1,7 @@
-import { theme } from 'app/theme';
-import React from 'react';
-import { TouchableOpacity, View, Animated } from 'react-native';
-import { PressablePaginationProps } from '../Interfaces';
-import { styles } from './PressablePagination.styles';
+import React from "react";
+import { TouchableOpacity, View, Animated } from "react-native";
+import { PressablePaginationProps } from "../Interfaces";
+import { styles } from "./PressablePagination.styles";
 
 const PressablePagination = (props: PressablePaginationProps) => {
   return (
@@ -17,16 +16,12 @@ const PressablePagination = (props: PressablePaginationProps) => {
           const dotWidthAndHeight = props.scrollX.interpolate({
             inputRange,
             outputRange: [4, 8, 4],
-            extrapolate: 'clamp',
+            extrapolate: "clamp",
           });
           const backgroundColor = props.scrollX.interpolate({
             inputRange,
-            outputRange: [
-              theme.colours.greysSilver,
-              theme.colours.oceanBlue,
-              theme.colours.greysSilver,
-            ],
-            extrapolate: 'clamp',
+            outputRange: ["grey", "black", "grey"],
+            extrapolate: "clamp",
           });
           return (
             <TouchableOpacity

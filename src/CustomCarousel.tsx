@@ -1,16 +1,22 @@
-import { getScreenWidth } from 'module/my-mind-questionaire/utils/screen/screen.util';
-import React, { useRef } from 'react';
-import { Animated, View } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
-import { ImportantForAccessibility } from '../Touchables/StandardButton/enums';
-import { CustomCarouselProps } from './Interfaces';
-import PressablePagination from './PressablePagination/PressablePagination';
+import React, { useRef } from "react";
+import {
+  Animated,
+  Dimensions,
+  View,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
+} from "react-native";
+import { FlatList } from "react-native-gesture-handler";
+import { CustomCarouselProps } from "./Interfaces";
+import PressablePagination from "./PressablePagination/PressablePagination";
+
+const { width: WIDTH } = Dimensions.get("window");
 
 const CustomCarousel = (props: CustomCarouselProps) => {
   const ref = useRef<FlatList>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
 
-  const handleScroll = (event: AnimationEvent) => {
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     Animated.event(
       [
         {
@@ -57,16 +63,14 @@ const CustomCarousel = (props: CustomCarouselProps) => {
       <View
         style={props.paginationContainerStyle}
         accessibilityElementsHidden={true}
-        importantForAccessibility={ImportantForAccessibility.noHideDescendants}
+        importantForAccessibility={"no-hide-descendants"}
       >
         <PressablePagination
           data={props.data}
           scrollX={scrollX}
           getIndex={scrollFunction}
           itemWidth={
-            props.widthBoundaryConfig
-              ? props.widthBoundaryConfig
-              : getScreenWidth()
+            props.widthBoundaryConfig ? props.widthBoundaryConfig : WIDTH
           }
         />
       </View>

@@ -1,2 +1,2 @@
-import CustomCarousel from "./src/CustomCarousel";
+import CustomCarousel from "./src/components/CustomCarousel";
 export { CustomCarousel };
