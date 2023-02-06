@@ -1,0 +1,11 @@
+{
+  "name": "carousel-with-pagination-rn",
+  "version": "1.0.0",
+  "description": "Custom carousel with pagination for React-Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "veryrare104",
+  "license": "MIT"
+}
