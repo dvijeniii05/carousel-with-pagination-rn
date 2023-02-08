@@ -1,10 +1,10 @@
-import { Animated, ViewStyle } from 'react-native';
+import { Animated, ViewStyle } from "react-native";
 
 const parentContainer: ViewStyle = {
-  flexDirection: 'row',
-  width: '100%',
-  alignItems: 'center',
-  justifyContent: 'center',
+  flexDirection: "row",
+  width: "100%",
+  alignItems: "center",
+  justifyContent: "center",
   height: 40, //only needed when height is dynamically set for each pagination item
 };
 
@@ -14,8 +14,8 @@ const buttonContainer: ViewStyle = {
 };
 
 const buttonStyle = (
-  widthAndHeight: Animated.AnimatedInterpolation,
-  backgroundColor: Animated.AnimatedInterpolation
+  widthAndHeight: Animated.AnimatedInterpolation<string | number>,
+  backgroundColor: Animated.AnimatedInterpolation<string | number>
 ): Animated.Animated => {
   return {
     width: widthAndHeight,

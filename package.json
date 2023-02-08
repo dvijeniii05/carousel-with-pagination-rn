@@ -1,6 +1,6 @@
 {
   "name": "carousel-with-pagination-rn",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Custom carousel with pagination for React-Native",
   "keywords": [
     "react-component",
@@ -11,9 +11,12 @@
     "custom-carousel",
     "carousel"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && cp package.json README.md ./dist"
   },
   "author": "veryrare104",
   "license": "MIT",
@@ -26,7 +29,10 @@
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.27",
+    "@types/react-native": "^0.71.2",
+    "@types/react-test-renderer": "^18.0.0",
     "react-native-testing-library": "^6.0.0",
-    "react-test-renderer": "^18.2.0"
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^4.9.5"
   }
 }

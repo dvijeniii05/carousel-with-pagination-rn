@@ -1,4 +1,4 @@
-import { Animated, ListRenderItem, StyleProp, ViewStyle } from 'react-native';
+import { Animated, ListRenderItem, StyleProp, ViewStyle } from "react-native";
 
 export interface CustomCarouselProps {
   data: Array<any>;
@@ -22,7 +22,7 @@ export interface CustomCarouselProps {
 
 export interface PressablePaginationProps {
   data: Array<any>;
-  scrollX: Animated.AnimatedInterpolation;
+  scrollX: Animated.AnimatedInterpolation<string | number>;
   getIndex: (idx: number) => void;
   itemWidth: number;
 }
