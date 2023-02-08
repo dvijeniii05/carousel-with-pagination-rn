@@ -1,7 +1,16 @@
 {
   "name": "carousel-with-pagination-rn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom carousel with pagination for React-Native",
+  "keywords": [
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "swiper",
+    "custom-carousel",
+    "carousel"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +18,7 @@
   "author": "veryrare104",
   "license": "MIT",
   "dependencies": {
+    "@tsconfig/react-native": "^2.0.3",
     "react": "^18.2.0",
     "react-native": "^0.71.2",
     "react-native-gesture-handler": "^2.9.0"
