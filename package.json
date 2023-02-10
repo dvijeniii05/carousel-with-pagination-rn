@@ -1,6 +1,6 @@
 {
   "name": "carousel-with-pagination-rn",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Custom carousel with pagination for React-Native",
   "keywords": [
     "react-component",
@@ -11,12 +11,13 @@
     "custom-carousel",
     "carousel"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/commonjs/index.js",
+  "types": "lib/typescript/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md carousel-with-pagination-rn.podspec ./dist"
+    "build": "npm run clean && tsc && cp package.json README.md carousel-with-pagination-rn.podspec ./dist",
+    "prepack": "bob build"
   },
   "author": "veryrare104",
   "license": "MIT",
@@ -40,5 +41,27 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
-  }
+  },
+  "react-native": "src/index.ts",
+  "module": "lib/module/index.js",
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
