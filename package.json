@@ -1,6 +1,6 @@
 {
   "name": "carousel-with-pagination-rn",
-  "version": "1.0.10",
+  "version": "1.0.16",
   "description": "Custom carousel with pagination for React-Native",
   "keywords": [
     "react-component",
@@ -16,26 +16,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md ./dist"
+    "build": "npm run clean && tsc && cp package.json README.md carousel-with-pagination-rn.podspec ./dist"
   },
   "author": "veryrare104",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/runtime": "^7.14.6",
     "@tsconfig/react-native": "^2.0.3",
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.27",
     "@types/react-native": "^0.71.2",
     "@types/react-test-renderer": "^18.0.0",
-    "react": "^18.2.0",
-    "react-native": "^0.71.2",
+    "metro-react-native-babel-preset": "^0.66.1",
+    "react": "^17.2.0",
+    "react-native": "^0.68.5",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-testing-library": "^6.0.0",
     "react-test-renderer": "^18.2.0",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-native": ">=0.6.0",
-    "react-native-gesture-handler": "*"
+    "react": "*",
+    "react-native": "*"
   }
 }
