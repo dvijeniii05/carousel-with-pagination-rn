@@ -46,12 +46,13 @@ const CustomCarousel = (props: CustomCarouselProps) => {
   }).current;
 
   return (
-    <View style={props.contentContainerStyle} testID="content-container">
+    <View style={props.mainContainerStyle} testID="content-container">
       <FlatList
         ref={ref}
         data={props.data}
         renderItem={props.renderItem}
-        style={props?.carouselContainerStyle}
+        style={[{ flexGrow: 0 }, props.carouselContainerStyle]}
+        contentContainerStyle={props.carouselContentContainerStyle}
         horizontal
         showsHorizontalScrollIndicator={false}
         pagingEnabled
@@ -69,9 +70,15 @@ const CustomCarousel = (props: CustomCarouselProps) => {
           data={props.data}
           scrollX={scrollX}
           getIndex={scrollFunction}
-          itemWidth={
-            props.widthBoundaryConfig ? props.widthBoundaryConfig : WIDTH
+          itemWidth={props.widthBoundaryForPagination ?? WIDTH}
+          indicatorHeight={props.indicatorHeight ?? [15, 15, 15]}
+          indicatorWidth={props.indicatorWidth ?? [20, 40, 20]}
+          indicatorColor={props.indicatorColor ?? ["grey", "black", "grey"]}
+          paginataionBackgroundColor={
+            props.paginataionBackgroundColor ?? "transparent"
           }
+          inidicatorBorderRadius={props.inidicatorBorderRadius ?? 5}
+          indicatorHorizontalPadding={props.indicatorHorizontalPadding ?? 10}
         />
       </View>
     </View>

@@ -6,21 +6,31 @@ import { styles } from "./PressablePagination.styles";
 const PressablePagination = (props: PressablePaginationProps) => {
   return (
     <>
-      <View style={styles.parentContainer}>
+      <View
+        style={styles.parentContainer(
+          props.indicatorHeight ? props.indicatorHeight[1] + 5 : 20,
+          props.paginataionBackgroundColor
+        )}
+      >
         {props.data.map((_, idx) => {
           const inputRange = [
             (idx - 1) * props.itemWidth,
             idx * props.itemWidth,
             (idx + 1) * props.itemWidth,
           ];
-          const dotWidthAndHeight = props.scrollX.interpolate({
+          const indicatorWidth = props.scrollX.interpolate({
             inputRange,
-            outputRange: [4, 8, 4],
+            outputRange: props.indicatorWidth,
+            extrapolate: "clamp",
+          });
+          const indicatorHeight = props.scrollX.interpolate({
+            inputRange,
+            outputRange: props.indicatorHeight,
             extrapolate: "clamp",
           });
           const backgroundColor = props.scrollX.interpolate({
             inputRange,
-            outputRange: ["grey", "black", "grey"],
+            outputRange: props.indicatorColor,
             extrapolate: "clamp",
           });
           return (
@@ -28,11 +38,16 @@ const PressablePagination = (props: PressablePaginationProps) => {
               key={idx}
               testID={`pagination-indicator-${idx}`}
               onPress={() => props.getIndex(idx)}
-              style={styles.buttonContainer}
+              style={styles.buttonContainer(props.indicatorHorizontalPadding)}
             >
               <Animated.View
                 key={idx.toString()}
-                style={styles.buttonStyle(dotWidthAndHeight, backgroundColor)}
+                style={styles.buttonStyle(
+                  indicatorWidth,
+                  indicatorHeight,
+                  backgroundColor,
+                  props.inidicatorBorderRadius
+                )}
               />
             </TouchableOpacity>
           );

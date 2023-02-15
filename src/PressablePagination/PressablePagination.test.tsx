@@ -1,21 +1,21 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { act, create } from 'react-test-renderer';
-import PressablePagination from './PressablePagination';
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import { act, create } from "react-test-renderer";
+import PressablePagination from "./PressablePagination";
 
-describe('Pressable Pagination', () => {
+describe("Pressable Pagination", () => {
   const defaultData = [
     {
-      text: 'text-one',
-      value: 'value-one',
+      text: "text-one",
+      value: "value-one",
     },
     {
-      text: 'text-two',
-      value: 'value-two',
+      text: "text-two",
+      value: "value-two",
     },
     {
-      text: 'text-three',
-      value: 'value-three',
+      text: "text-three",
+      value: "value-three",
     },
   ];
 
@@ -33,9 +33,15 @@ describe('Pressable Pagination', () => {
     getIndex: mockOnPress,
     itemWidth: 300,
     data: defaultData,
+    indicatorHeight: [15, 15, 15],
+    indicatorWidth: [20, 40, 20],
+    indicatorColor: ["grey", "black", "grey"],
+    paginataionBackgroundColor: "transparent",
+    inidicatorBorderRadius: 5,
+    indicatorHorizontalPadding: 10,
   };
 
-  test('should render 3 pagination indicators', () => {
+  test("should render 3 pagination indicators", () => {
     const rendered = create(<PressablePagination {...defaultProps} />);
 
     const paginationIndicators = rendered.root.findAllByType(TouchableOpacity);
@@ -43,7 +49,7 @@ describe('Pressable Pagination', () => {
     expect(paginationIndicators).toHaveLength(3);
   });
 
-  test('should advance pagination indicator to correct index onPress', () => {
+  test("should advance pagination indicator to correct index onPress", () => {
     const rendered = create(<PressablePagination {...defaultProps} />);
 
     act(() => {
