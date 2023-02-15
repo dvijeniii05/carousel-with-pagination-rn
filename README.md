@@ -1,13 +1,17 @@
+#Carousel With Pagination RN
 
-<h1 align="center">
-  Carousel With Pagination RN
-</h1>
+<div align="center">
 
-<p align="center"><iframe src="https://giphy.com/embed/TabwFck9vEt44" width="480" height="254" frameBorder="0" class="giphy-embed" allowFullScreen ></iframe></p>
+[![Version][version-badge]][package]
+[![Downloads][downloads-badge]][npmtrends]
 
-Performant and accessible Carousel component for React-Native that can be used with images or nested components. Built on top of the simple FlatList compoentn with additional styling and added animations. The pagination indicators allow user to navigate to the specific element in the carousel with animated indicator transition. All elements within the carousel are accessible for the user using the VoiceOverText feature of their device (iOS and Android)
+</div>
 
-Nothing special, but might be useful :)
+![carousel giph](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjIwZjc4MDI4NzZhZmE1NTVlYThlYTE2NTY1YzQ2NzFmNzAzOTJkYyZjdD1n/TabwFck9vEt44/giphy.gif)
+
+Performant and accessible Carousel component for React-Native that can be used with images or nested components. Built on top of the pure FlatList component with additional styling and added animations. The pagination indicators allow user to navigate to the specific element in the carousel with animated indicator transition. All elements within the carousel are accessible for the user using the VoiceOverText feature of their device (iOS and Android)
+
+Nothing special, but might be useful 😶‍🌫️
 
 ## 🤳 Showcase: 
 
@@ -161,7 +165,7 @@ export default YourScreen;
 | **`carouselContainerStyle`** | Equivalent to `style` prop in FlatList and has the same affect to the Carousel | N/A | `StyleProp<ViewStyle>` |
 | **`carouselContentContainerStyle`** | Equivalent to `contentContainerStyle` prop in FlatList and has the same affect to the Carousel | N/A | `StyleProp<ViewStyle>` |
 | **`paginationContainerStyle`** | Used to apply styling to the container that wraps the pagination | N/A | `StyleProp<ViewStyle>` |
-| **`widthBoundaryForPagination`** | Is used to adjust inputRange of interpolated animations of pagination. Has to match to the `width` of `renderItem`. If not set, the device screen width will be used.| N/A | `number` |
+| **`widthBoundaryForPagination`** | Is used to adjust inputRange of interpolated animations of pagination. Has to match to the `width` of `renderItem`. If not set, the device screen width will be used.| `Dimensions.get('window').width` | `number` |
 | **`indicatorWidth`** | Is used to adjust dynamic width of each pagination indicator. Has to be an array of 3 numbers where the second element of array will be assigned to the height of the active indicator. Example: `indicatorWidth={[15,30,15]}`. If static width is required, pass an array of three equal numbers as: `[10,10,10]`  | `[20,40,20]` | `Array<number>` |
 | **`indicatorHeight`** | Is used to adjust dynamic height of each pagination indicator. Has to be an array of 3 numbers where the second element of array will be assigned to the width of the active indicator. Example: `indicatorHeight={[15,30,15]}`. If static width is required, pass an array of three equal numbers as: `[10,10,10]`  | `[15,15,15]` | `Array<number>` |
 | **`indicatorColor`** | Is used to adjust dynamic color of each pagination indicator. Has to be an array of 3 strings/colors where the second element of array will be assigned to color of the active indicator. Example: `indicatorColor={['grey', 'black', 'grey']}`. If static width is required, pass an array of three equal numbers as: `['grey', 'grey', 'grey']`  | `['grey', 'black', 'grey']` | `Array<string>` |
@@ -169,7 +173,7 @@ export default YourScreen;
 | **`indicatorHorizontalPadding`** | Is used to adjust `horizontalPadding` of each pagination indicator | `10` | `number` |
 | **`paginataionBackgroundColor`** | Is used to change `backgroundColor` of each pagination container | `transparent` | `string` |
 
-> ❗❗ It is important to set a value to prop **`widthBoundaryForPagination`** if the parent container within `renderItem` is not taking the full width of the screen. These values have to be the same.
+> ❗❗ It is important to set a value to prop **`widthBoundaryForPagination`** if parent container within `renderItem` is not taking the full width of the screen. These values have to be the same.
 
 
 ## ⚙️ Methods:
@@ -185,6 +189,8 @@ export default YourScreen;
 * giphs created and sourced - [GIPHY](https://giphy.com/) 
 
 
+[package]: https://www.npmjs.com/package/carousel-with-pagination-rn
+[npmtrends]: http://www.npmtrends.com/carousel-with-pagination-rn
 
 
 
