@@ -1,13 +1,19 @@
-#Carousel With Pagination RN
+
 
 <div align="center">
 
-[![Version][version-badge]][package]
-[![Downloads][downloads-badge]][npmtrends]
+<h1>
+Carousel With Pagination RN
+</h1>
+
+![npmtrends](https://img.shields.io/npm/dm/carousel-with-pagination-rn?style=flat-square)
+![version](https://img.shields.io/npm/v/carousel-with-pagination-rn?style=flat-square)
+
+![carousel giph](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjIwZjc4MDI4NzZhZmE1NTVlYThlYTE2NTY1YzQ2NzFmNzAzOTJkYyZjdD1n/TabwFck9vEt44/giphy.gif)
 
 </div>
 
-![carousel giph](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjIwZjc4MDI4NzZhZmE1NTVlYThlYTE2NTY1YzQ2NzFmNzAzOTJkYyZjdD1n/TabwFck9vEt44/giphy.gif)
+
 
 Performant and accessible Carousel component for React-Native that can be used with images or nested components. Built on top of the pure FlatList component with additional styling and added animations. The pagination indicators allow user to navigate to the specific element in the carousel with animated indicator transition. All elements within the carousel are accessible for the user using the VoiceOverText feature of their device (iOS and Android)
 
@@ -188,9 +194,6 @@ export default YourScreen;
 * images used in **Plug & Play** example source - [Lorem Picsum](https://picsum.photos/)
 * giphs created and sourced - [GIPHY](https://giphy.com/) 
 
-
-[package]: https://www.npmjs.com/package/carousel-with-pagination-rn
-[npmtrends]: http://www.npmtrends.com/carousel-with-pagination-rn
 
 
 
