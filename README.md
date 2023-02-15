@@ -6,8 +6,9 @@
 Carousel With Pagination RN
 </h1>
 
-![npmtrends](https://img.shields.io/npm/dm/carousel-with-pagination-rn?style=flat-square)
 ![version](https://img.shields.io/npm/v/carousel-with-pagination-rn?style=flat-square)
+![npmtrends](https://img.shields.io/npm/dm/carousel-with-pagination-rn?color=purple&style=flat-square)
+
 
 ![carousel giph](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjIwZjc4MDI4NzZhZmE1NTVlYThlYTE2NTY1YzQ2NzFmNzAzOTJkYyZjdD1n/TabwFck9vEt44/giphy.gif)
 
