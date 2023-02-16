@@ -180,7 +180,7 @@ export default YourScreen;
 | **`indicatorHorizontalPadding`** | Is used to adjust `horizontalPadding` of each pagination indicator | `10` | `number` |
 | **`paginataionBackgroundColor`** | Is used to change `backgroundColor` of each pagination container | `transparent` | `string` |
 
-> ❗❗ It is important to set a value to prop **`widthBoundaryForPagination`** if parent container within `renderItem` is not taking the full width of the screen. These values have to be the same.
+> ❗❗ It is important to pass a value to prop **`widthBoundaryForPagination`** if parent container within `renderItem` is not taking the full width of the screen. These values have to be the same.
 
 
 ## ⚙️ Methods:
