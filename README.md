@@ -40,12 +40,12 @@ npm install carousel-with-pagination-rn
 ## 🎮 Usage:
 
 **Import the default component:** 
-```
+```javascript
 import CustomCarousel from 'carousel-with-pagination-rn';
 ```
 
 **Pass the required props `data` and  `renderItem`:**
-```
+```javascript
 const YourScreen = () => {
     return(
         <CustomCarousel
@@ -56,7 +56,7 @@ const YourScreen = () => {
 }
 ```
 **Plug &  Play example:**
-```
+```javascript
 import CustomCarousel from 'carousel-with-pagination-rn';
 
 const dummyData = [
