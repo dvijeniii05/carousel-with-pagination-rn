@@ -16,7 +16,7 @@ Carousel With Pagination RN
 
 
 
-Performant and accessible Carousel component for React-Native that can be used with images or nested components. Built on top of the pure FlatList component with additional styling and added animations. The pagination indicators allow user to navigate to the specific element in the carousel with animated indicator transition. All elements within the carousel are accessible for the user using the VoiceOverText feature of their device (iOS and Android)
+Performant and accessible Carousel component for React-Native that can be used with images or nested components. Built on top of the pure FlatList component with additional styling and added animations. The pagination indicators allow user to navigate to a specific element of the carousel with animated indicator transition. All elements within the carousel are accessible for the user using the VoiceOverText feature of their device (iOS and Android)
 
 Nothing special, but might be useful 😶‍🌫️
 
