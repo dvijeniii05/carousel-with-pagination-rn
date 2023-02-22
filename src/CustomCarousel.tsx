@@ -18,7 +18,7 @@ import PressablePagination from "./PressablePagination/PressablePagination";
 const { width: WIDTH } = Dimensions.get("window");
 
 const CustomCarousel = forwardRef<RefProps, CustomCarouselProps>(
-  (props, ref) => {
+  ({ disablePagination = false, ...props }, ref) => {
     const flatlistRef = useRef<FlatList>(null);
     const scrollX = useRef(new Animated.Value(0)).current;
     const [currentItemIndex, setCurrentItemIndex] = useState<number>(0);
@@ -97,26 +97,30 @@ const CustomCarousel = forwardRef<RefProps, CustomCarouselProps>(
           onViewableItemsChanged={onViewableItemsChanged}
           onEndReached={endReached}
         />
-        <View
-          style={props.paginationContainerStyle}
-          accessibilityElementsHidden={true}
-          importantForAccessibility={"no-hide-descendants"}
-        >
-          <PressablePagination
-            data={props.data}
-            scrollX={scrollX}
-            getIndex={scrollFunction}
-            itemWidth={props.widthBoundaryForPagination ?? WIDTH}
-            indicatorHeight={props.indicatorHeight ?? [15, 15, 15]}
-            indicatorWidth={props.indicatorWidth ?? [20, 40, 20]}
-            indicatorColor={props.indicatorColor ?? ["grey", "black", "grey"]}
-            paginataionBackgroundColor={
-              props.paginataionBackgroundColor ?? "transparent"
-            }
-            inidicatorBorderRadius={props.inidicatorBorderRadius ?? 5}
-            indicatorHorizontalPadding={props.indicatorHorizontalPadding ?? 10}
-          />
-        </View>
+        {!disablePagination && (
+          <View
+            style={props.paginationContainerStyle}
+            accessibilityElementsHidden={true}
+            importantForAccessibility={"no-hide-descendants"}
+          >
+            <PressablePagination
+              data={props.data}
+              scrollX={scrollX}
+              getIndex={scrollFunction}
+              itemWidth={props.widthBoundaryForPagination ?? WIDTH}
+              indicatorHeight={props.indicatorHeight ?? [15, 15, 15]}
+              indicatorWidth={props.indicatorWidth ?? [20, 40, 20]}
+              indicatorColor={props.indicatorColor ?? ["grey", "black", "grey"]}
+              paginataionBackgroundColor={
+                props.paginataionBackgroundColor ?? "transparent"
+              }
+              inidicatorBorderRadius={props.inidicatorBorderRadius ?? 5}
+              indicatorHorizontalPadding={
+                props.indicatorHorizontalPadding ?? 10
+              }
+            />
+          </View>
+        )}
       </View>
     );
   }
