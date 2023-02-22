@@ -53,6 +53,14 @@ export interface CustomCarouselProps
      */
   widthBoundaryForPagination?: number;
   /**
+   * Is used to disable pagination. Default is set to false.
+   *
+     ```
+     disablePagination={true}
+     ```
+   */
+  disablePagination?: boolean;
+  /**
    * Called once the last element of the Carousel is displayed
    *
    */
@@ -130,4 +138,9 @@ export interface PressablePaginationProps {
    * Default value is 'transparent'
    */
   paginataionBackgroundColor: string;
+}
+
+export interface RefProps {
+  showNextItem: () => void;
+  showPreviousItem: () => void;
 }
