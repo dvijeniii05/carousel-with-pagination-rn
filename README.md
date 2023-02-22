@@ -212,7 +212,7 @@ Now you can access the `ref` for CustomCarousel component, assign it as custom r
     >
   </kbd>
   <br>
-  <em>Use if Ref methods with custom components that can be positioned anywhere.</em>
+  <em>Use of Ref methods with custom components that can be positioned anywhere.</em>
 </p>
 
 
