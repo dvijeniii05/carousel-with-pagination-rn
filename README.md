@@ -179,15 +179,90 @@ export default YourScreen;
 | **`inidicatorBorderRadius`** | Is used to adjust `borderRadius` of each pagination indicator | `5` | `number` |
 | **`indicatorHorizontalPadding`** | Is used to adjust `horizontalPadding` of each pagination indicator | `10` | `number` |
 | **`paginataionBackgroundColor`** | Is used to change `backgroundColor` of each pagination container | `transparent` | `string` |
+| **`isEndReached`** | Will be called once the last element of the Carousel is displayed | `(endReached: boolean) => void` |
 
 > ❗❗ It is important to pass a value to prop **`widthBoundaryForPagination`** if parent container within `renderItem` is not taking the full width of the screen. These values have to be the same.
 
 
-## ⚙️ Methods:
+## ⚙️ Methods attached to the Ref:
 
 | Method         | Description | Type |
 | -------------- | ----------- | ---- |
-| **`isEndReached`** | Will be called once the last element of the Carousel is displayed | `(endReached: boolean) => void` |
+| **`ref`** | Can be used to access two methods: `showNextItem()` & `showPreviousItem()`. These methods then can be used to access behavior of the carousel and define it manually i.e. move to the next item in the carousel or move to the previous one. The Example below should provide a bit more information on the use and the implementation of these methods. |`RefProps` |
+
+**Explanation of use:**
+This feature was added in `v1.1.5` following a feature request on the GitHub repository. 
+Now you can access the `ref` for CustomCarousel component, assign it as custom ref within your component using `useRef` and trigger two methods: `showNextItem()` AND `showPreviousItem()` to scroll trhough the Carousel using your custom component ( arrows as an example ).
+
+**Showcase:**
+
+<p>
+  <kbd>
+    <img
+      src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZThjZWY5MDBlYTZlODVlZDIwYzEwN2M0NDQ1OGU5ZjVmNzczZWQ5MyZjdD1n/3n7Y3mZzP5su1TyxUa/giphy.gif"
+      title="Arrows"
+      float="left"
+    >
+  </kbd>
+  <kbd>
+    <img
+      src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDE5MWE1NDhhYzc5NzVkM2Q2MGRmMjE3NDJiOGE2OGNjMDI0ZjI1OCZjdD1n/vCHDyihVKGCDfYz8xg/giphy.gif"
+      title="Text"
+      float="left"
+    >
+  </kbd>
+  <br>
+  <em>Use if Ref methods with custom components that can be positioned anywhere.</em>
+</p>
+
+
+**Example:**
+
+```javascript
+const CarouselScreen = () => {
+  let carouselRef = useRef<RefProps>(null); //RefProps interface can be imported from the library
+
+  const handleNextClick = () => {
+    carouselRef.current?.showNextItem(); //will scroll to the next item in carousel
+  };
+  const handlePreviousClick = () => {
+    carouselRef.current?.showPreviousItem(); //will scroll to the previous item in carousel
+  };
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <View
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <CustomCarousel
+          ref={carouselRef} //access and assign the reference for the further use and manipulation
+          data={dummyData}
+          renderItem={renderItem} //Copy the renderItem from the 'Plug&Play' example or use your own renderItem.
+          disablePagination={true} //used to hide the pagination of the carousel
+        />
+        <View
+          style={{
+            flexDirection: 'row',
+            width: 100,
+            justifyContent: 'space-between',
+          }}
+        >
+          <TouchableOpacity onPress={handlePreviousClick}>
+            <Text>Previous</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleNextClick}>
+            <Text>Next</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+```
+
+
 
 
 ## 🪪 License & Sources:
