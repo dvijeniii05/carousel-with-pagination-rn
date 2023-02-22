@@ -131,3 +131,8 @@ export interface PressablePaginationProps {
    */
   paginataionBackgroundColor: string;
 }
+
+export interface RefProps {
+  showNextItem: () => void;
+  showPreviousItem: () => void;
+}
